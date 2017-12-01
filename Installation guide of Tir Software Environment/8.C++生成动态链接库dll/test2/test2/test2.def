@@ -1,0 +1,4 @@
+LIBRARY "test2"
+EXPORTS 
+main @1
+addB @2

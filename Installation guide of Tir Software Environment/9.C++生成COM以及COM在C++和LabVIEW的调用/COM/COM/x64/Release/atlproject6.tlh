@@ -1,0 +1,108 @@
+﻿// Created by Microsoft (R) C/C++ Compiler Version 14.11.25547.0 (56817d72).
+//
+// e:\visual studio 2017\projects\com\com\x64\release\atlproject6.tlh
+//
+// C++ source equivalent of type library E:\\visual studio 2017\\Projects\\ATLProject6\\x64\\Release\\ATLProject6.dll
+// compiler-generated file created 11/21/17 at 23:07:24 - DO NOT EDIT!
+
+#pragma once
+#pragma pack(push, 8)
+
+#include <comdef.h>
+
+//
+// Forward references and typedefs
+//
+
+struct __declspec(uuid("c0c9792b-71f5-4321-9cc3-625bc20a3dbd"))
+/* LIBID */ __ATLProject6Lib;
+struct /* coclass */ CompReg;
+struct __declspec(uuid("a817e7a2-43fa-11d0-9e44-00aa00b6770a"))
+/* dual interface */ IComponentRegistrar;
+struct /* coclass */ FirstClass;
+struct __declspec(uuid("f5056498-4669-4f3a-a96a-68f8ecf4d683"))
+/* dual interface */ IFirstClass;
+
+//
+// Smart pointer typedef declarations
+//
+
+_COM_SMARTPTR_TYPEDEF(IComponentRegistrar, __uuidof(IComponentRegistrar));
+_COM_SMARTPTR_TYPEDEF(IFirstClass, __uuidof(IFirstClass));
+
+//
+// Type library items
+//
+
+struct __declspec(uuid("5d452999-205b-44a4-9f9a-4bcaad766204"))
+CompReg;
+    // [ default ] interface IComponentRegistrar
+
+struct __declspec(uuid("a817e7a2-43fa-11d0-9e44-00aa00b6770a"))
+IComponentRegistrar : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    HRESULT Attach (
+        _bstr_t bstrPath );
+    HRESULT RegisterAll ( );
+    HRESULT UnregisterAll ( );
+    HRESULT GetComponents (
+        SAFEARRAY * * pbstrCLSIDs,
+        SAFEARRAY * * pbstrDescriptions );
+    HRESULT RegisterComponent (
+        _bstr_t bstrCLSID );
+    HRESULT UnregisterComponent (
+        _bstr_t bstrCLSID );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall raw_Attach (
+        /*[in]*/ BSTR bstrPath ) = 0;
+      virtual HRESULT __stdcall raw_RegisterAll ( ) = 0;
+      virtual HRESULT __stdcall raw_UnregisterAll ( ) = 0;
+      virtual HRESULT __stdcall raw_GetComponents (
+        /*[out]*/ SAFEARRAY * * pbstrCLSIDs,
+        /*[out]*/ SAFEARRAY * * pbstrDescriptions ) = 0;
+      virtual HRESULT __stdcall raw_RegisterComponent (
+        /*[in]*/ BSTR bstrCLSID ) = 0;
+      virtual HRESULT __stdcall raw_UnregisterComponent (
+        /*[in]*/ BSTR bstrCLSID ) = 0;
+};
+
+struct __declspec(uuid("6a39729f-5911-4ead-9527-3c5e0b58484b"))
+FirstClass;
+    // [ default ] interface IFirstClass
+
+struct __declspec(uuid("f5056498-4669-4f3a-a96a-68f8ecf4d683"))
+IFirstClass : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    long add (
+        long par1,
+        long par2 );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall raw_add (
+        /*[in]*/ long par1,
+        /*[in]*/ long par2,
+        /*[out,retval]*/ long * result ) = 0;
+};
+
+//
+// Wrapper method implementations
+//
+
+#include "e:\visual studio 2017\projects\com\com\x64\release\atlproject6.tli"
+
+#pragma pack(pop)

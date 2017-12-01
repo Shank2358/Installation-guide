@@ -1,0 +1,59 @@
+// AlgorithmCOM.idl : AlgorithmCOM的 IDL 源
+//
+
+// 此文件将由 MIDL 工具处理以
+// 产生类型库(AlgorithmCOM.tlb)和封送处理代码。
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(a817e7a2-43fa-11d0-9e44-00aa00b6770a),
+	dual,	
+	pointer_default(unique)
+]
+interface IComponentRegistrar : IDispatch
+{
+	[id(1)]	HRESULT Attach([in] BSTR bstrPath);
+	[id(2)]	HRESULT RegisterAll();
+	[id(3)]	HRESULT UnregisterAll();
+	[id(4)]	HRESULT GetComponents([out] SAFEARRAY(BSTR)* pbstrCLSIDs, [out] SAFEARRAY(BSTR)* pbstrDescriptions);
+	[id(5)]	HRESULT RegisterComponent([in] BSTR bstrCLSID);
+	[id(6)] HRESULT UnregisterComponent([in] BSTR bstrCLSID);
+};
+
+[
+	object,
+	uuid(0E05ABD7-9661-404F-89F5-E3D1EF7C3C6C),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ITirBase : IDispatch{
+	[id(1)] HRESULT Add([in] LONG para1, [in] LONG para2, [out, retval] LONG* result);
+};
+[
+	uuid(743864F7-3034-4DE1-92A8-D3EA55416304),
+	version(1.0),
+	custom(a817e7a1-43fa-11d0-9e44-00aa00b6770a,"{2B64742D-A666-470E-9E7B-0C2007BA7785}")
+]
+library AlgorithmCOMLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(2B64742D-A666-470E-9E7B-0C2007BA7785)		
+	]
+	coclass CompReg
+	{
+		[default] interface IComponentRegistrar;
+	};
+	[
+		uuid(182AE843-1324-49D0-845B-E41CAB7DFACC)		
+	]
+	coclass TirBase
+	{
+		[default] interface ITirBase;
+	};
+};
+

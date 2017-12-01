@@ -1,0 +1,26 @@
+HKCR
+{
+	base.1 = s 'TirBase Class'
+	{
+		CLSID = s '{182AE843-1324-49D0-845B-E41CAB7DFACC}'
+	}
+	base = s 'TirBase Class'
+	{		
+		CurVer = s 'base.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {182AE843-1324-49D0-845B-E41CAB7DFACC} = s 'TirBase Class'
+		{
+			ProgID = s 'base.1'
+			VersionIndependentProgID = s 'base'
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			TypeLib = s '{743864F7-3034-4DE1-92A8-D3EA55416304}'
+			Version = s '1.0'
+		}
+	}
+}
